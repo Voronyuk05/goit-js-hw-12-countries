@@ -5,20 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Page title</title>
     <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/pnotify/dist/iife/PNotify.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
     <script type="module" src="./index.js"></script>
   </head>
   <body>
-    <form class="form-inline search-form js-search-form">
-      <div class="form-group">
+      <div class="input-group">
         <input type="text" class="form-control" name="query" />
         <div class="requests">
           <ul>
           </ul>
         </div>
       </div>
-
-      <button type="submit" class="btn btn-primary">Шукати</button>
-    </form>
 
     <div class="js-card-container"></div>
   </body>
