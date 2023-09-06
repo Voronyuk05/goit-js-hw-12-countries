@@ -1,15 +1,11 @@
 import countryTpl from './countries.hbs';
+import { fetchCountries } from './fetchCountries';
 
 const cardContainer = document.querySelector('.js-card-container')
 const requestsEl = document.querySelector('.requests')
 const input = document.querySelector('.form-control')
 
 input.addEventListener('input',  _.debounce(showRequests,500))
-
-function getData(inputValue) {
-    return fetch(`https://restcountries.com/v3.1/name/${inputValue}`)
-    .then(response => response.json())
-}
 
 
 function searchCountryData(country) {
@@ -25,7 +21,7 @@ function searchCountryData(country) {
 function showRequests(e) {
     const inputValue = e.target.value
     cardContainer.innerHTML = ''
-    getData(inputValue)
+    fetchCountries(inputValue)
     .then((country)=> {
         requestsEl.innerHTML = ``
         if (country.length <= 10) {
